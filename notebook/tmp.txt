@@ -1,0 +1,6 @@
+'thủ tục ghi vào sổ hộ tịch việc hộ tịch khác của công dân việt nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài (khai sinh; giám hộ; nhận cha, mẹ, con; xác định cha, mẹ, con; nuôi con nuôi; khai tử; thay đổi hộ tịch)': ['thủ tục ghi vào sổ hộ tịch việc hộ tịch khác của công dân việt nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài (khai sinh; giám hộ; nhận cha, mẹ, con; xác định cha, mẹ, con; nuôi con nuôi; khai tử; thay đổi hộ tịch)'],
+'khai tử lưu động': ['khai tử lưu động'],
+'lại khai tử': ['lại khai tử'],
+'khai tử': ['khai tử'],
+'có yếu tố nước ngoài': ['có yếu tố nước ngoài'],
+'cho người đã có hồ sơ, giấy tờ cá nhân': ['cho người đã có hồ sơ, giấy tờ cá nhân'],
