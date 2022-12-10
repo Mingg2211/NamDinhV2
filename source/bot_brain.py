@@ -76,7 +76,8 @@ def bot_searching(user_question:str):
         DUP_procedure_list = search_list_token_in_database(keywords)
         if DUP_procedure_list:
             result += DUP_procedure_list
-    result += search_token_in_database(keywords[0])
+    if len(keywords) !=0:
+        result += search_token_in_database(keywords[0])
     result = remove_dup(result)
     # Lấy K=5
     return result[:5]
