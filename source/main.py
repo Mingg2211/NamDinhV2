@@ -20,5 +20,8 @@ class Item(BaseModel):
 
 @app.post("/bot_searching")
 def ranking_utter(item: Item):
-    result = bot_searching(item.value.lower().replace('thủ tục',''))
+    if item!='' and item:
+        result = bot_searching(item.value.lower().replace('thủ tục',''))
+    else:
+        result = "Nhập lại nhé"
     return {"ranking_answer": result}
