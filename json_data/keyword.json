@@ -3,7 +3,8 @@
         "khai sinh lưu động"
     ],
     "lại khai sinh": [
-        "lại khai sinh","lại khai sinh"
+        "lại khai sinh",
+        "lại khai sinh"
     ],
     "khai sinh": [
         "khai sinh"
@@ -18,25 +19,37 @@
         "lại kết hôn"
     ],
     "kết hôn": [
-        "kết hôn","hôn nhân","cưới"
+        "kết hôn",
+        "hôn nhân",
+        "cưới"
     ],
     "khai tử lưu động": [
         "khai tử lưu động"
     ],
     "lại khai tử": [
-        "lại khai tử","khai tử lại"
+        "lại khai tử",
+        "khai tử lại"
     ],
     "khai tử": [
-        "khai tử","khải tử"
+        "khai tử",
+        "khải tử"
     ],
     "ly hôn": [
-        "ly hôn","li hôn","lý hôn"
+        "ly hôn",
+        "li hôn",
+        "lý hôn"
+    ],
+    "cấp điện": [
+        "cấp điện"
     ],
     "biến động quyền sử dụng đất": [
         "biến động quyền sử dụng đất"
     ],
     "đăng ký đất đai": [
-        "đăng ký đất đai","đăng ký đất","đăng kí đất đai","đăng kí đất"
+        "đăng ký đất đai",
+        "đăng ký đất",
+        "đăng kí đất đai",
+        "đăng kí đất"
     ],
     "tranh chấp đất đai": [
         "tranh chấp đất đai"
@@ -45,10 +58,12 @@
         "khám chữa bệnh"
     ],
     "bảo hiểm y tế": [
-        "bảo hiểm y tế","bhyt"
+        "bảo hiểm y tế",
+        "bhyt"
     ],
     "bảo hiểm xã hội": [
-        "bảo hiểm xã hội","bhxh"
+        "bảo hiểm xã hội",
+        "bhxh"
     ],
     "an toàn lao động": [
         "an toàn lao động"
@@ -65,6 +80,59 @@
     "di chúc": [
         "di chúc"
     ],
+    "trẻ em mẫu giáo": [
+        "trẻ em mẫu giáo"
+    ],
+    "trẻ mẫu giáo": [
+        "trẻ mẫu giáo"
+    ],
+    "trường mẫu giáo": [
+        "trường mầm non",
+        "trường mẫu giáo",
+        "nhà trẻ"
+    ],
+    "mẫu giáo": [
+        "mẫu giáo"
+    ],
+    "trường tiểu học": [
+        "trường tiểu học"
+    ],
+    "trường trung học cơ sở": [
+        "trường trung học cơ sở"
+    ],
+    "trường trung học phổ thông": [
+        "trường trung học phổ thông"
+    ],
+    "trung tâm ngoại ngữ": [
+        "trung tâm ngoại ngữ"
+    ],
+    "trung cấp công lập": [
+        "trung cấp công lập"
+    ],
+    "đăng ký hộ kinh doanh": [
+        "đăng ký hộ kinh doanh"
+    ],
+    "hộ kinh doanh": [
+        "hộ kinh doanh"
+    ],
+    "đăng ký kinh doanh": [
+        "đăng ký kinh doanh"
+    ],
+    "trường trung cấp tư thục": [
+        "trường trung cấp tư thục"
+    ],
+    "hoạt động giáo dục": [
+        "hoạt động giáo dục"
+    ],
+    "giải quyết khiếu nại": [
+        "giải quyết khiếu nại"
+    ],
+    "liên hiệp hợp tác xã": [
+        "liên hiệp hợp tác xã"
+    ],
+    "hợp tác xã": [
+        "hợp tác xã"
+    ],
     "có yếu tố nước ngoài": [
         "có yếu tố nước ngoài",
         "người nước ngoài",
@@ -77,7 +145,8 @@
         "lần đầu"
     ],
     "lần hai": [
-        "lần hai","lần 2"
+        "lần hai",
+        "lần 2"
     ],
     "thanh toán": [
         "thanh toán"
@@ -93,5 +162,14 @@
     ],
     "chứng thực": [
         "chứng thực"
+    ],
+    "hỗ trợ": [
+        "hỗ trợ"
+    ],
+    "hoạt động trở lại": [
+        "hoạt động trở lại"
+    ],
+    "trở lại": [
+        "trở lại"
     ]
 }
