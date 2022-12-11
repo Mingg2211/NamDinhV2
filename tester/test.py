@@ -7,13 +7,19 @@ test_set = {"thủ tục đăng ký kết hôn" : ["Tối muốn đăng ký kế
 ref = []
 predicted = []
 test =[]
-for key in test_set.keys():
-    values = test_set[key]
-    ref = len(values)
-    count = 0
-    for value in values:
-        results = bot_searching(value.lower().replace('thủ tục',''))
-        if key in results:
-            count+=1
-    test.append([key,count/ref])
+
+with open("/home/admin/Desktop/bagsnlp/NamDinhV2/tester/exceptions.txt",'w',encoding='utf-8') as f:
+    for key in test_set.keys():
+        values = test_set[key]
+        ref = len(values)
+        count = 0
+        for value in values:
+            results = bot_searching(value.lower().replace('thủ tục',''))
+            if key in results:
+                count+=1
+            else:
+                f.write(value)
+                f.write('\n')
+        test.append([key,count/ref])
+        f.write('\n')
 print(test)

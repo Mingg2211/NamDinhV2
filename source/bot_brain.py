@@ -70,12 +70,11 @@ def bot_searching(user_question:str):
     if VP_procedure_list:
         result += VP_procedure_list        
     # Lấy duplicate
-    
-    print(keywords)
     if len(keywords) >= 2:
         DUP_procedure_list = search_list_token_in_database(keywords)
         if DUP_procedure_list:
             result += DUP_procedure_list
+    print(keywords)
     if len(keywords) !=0:
         result += search_token_in_database(keywords[0])
     result = remove_dup(result)

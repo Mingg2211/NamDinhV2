@@ -18,7 +18,7 @@
         "lại kết hôn"
     ],
     "kết hôn": [
-        "kết hôn"
+        "kết hôn","hôn nhân","cưới"
     ],
     "khai tử lưu động": [
         "khai tử lưu động"
@@ -27,10 +27,10 @@
         "lại khai tử","khai tử lại"
     ],
     "khai tử": [
-        "khai tử"
+        "khai tử","khải tử"
     ],
     "ly hôn": [
-        "ly hôn"
+        "ly hôn","li hôn","lý hôn"
     ],
     "biến động quyền sử dụng đất": [
         "biến động quyền sử dụng đất"
@@ -55,6 +55,9 @@
     ],
     "trợ cấp thất nghiệp": [
         "trợ cấp thất nghiệp"
+    ],
+    "bảo hiểm thất nghiệp":[
+        "bảo hiểm thất nghiệp"
     ],
     "thất nghiệp": [
         "thất nghiệp"
