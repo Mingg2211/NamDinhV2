@@ -18,18 +18,10 @@ app.add_middleware(
 class Item(BaseModel):
     value: str
 
-import re
-def preprocessing(text):
-    text = text.lower().replace('thủ tục','')
-    text = re.sub(' +', ' ',text)
-    text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_\.\,]',' ',text)
-    return text
-
-
 @app.post("/bot_searching")
 def ranking_utter(item: Item):
     if item!='' and item:
-        result = bot_searching(preprocessing(item.value))
+        result = bot_searching(item.value)
     else:
         result = "Nhập lại nhé"
     return {"ranking_answer": result}

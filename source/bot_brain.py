@@ -2,8 +2,15 @@ import pandas as pd
 import json
 from itertools import chain
 from underthesea import word_tokenize
+import re
 
 BOT_MEMORY = {'keywords': [], 'action': None}
+
+def preprocessing(text):
+    text = text.lower().replace('thủ tục','')
+    text = re.sub(' +', ' ',text)
+    text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_\.\,]',' ',text)
+    return text
 
 
 def remove_dup(result_list):
@@ -65,6 +72,7 @@ def search_list_token_in_database(list_user_token: list):
 
 
 def bot_searching(user_question: str):
+    user_question = preprocessing(user_question)
     BOT_MEMORY = bot_understand(user_question)
     result = []
     keywords = BOT_MEMORY['keywords']
