@@ -12,6 +12,7 @@ def preprocessing(text):
     text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_\.\,]',' ',text)
     return text
 
+# print(preprocessing("thủ tục đăng ký kết hôn 22121 !@#            âa"))
 
 def remove_dup(result_list):
     tmp_list = list(dict.fromkeys(result_list))

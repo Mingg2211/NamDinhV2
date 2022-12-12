@@ -16,7 +16,10 @@
         "kết hôn lưu động"
     ],
     "lại kết hôn": [
-        "lại kết hôn"
+        "lại kết hôn",
+        "kết hôn lại",
+        "kết hôn lần hai",
+        "cưới lại"
     ],
     "kết hôn": [
         "kết hôn",
@@ -80,6 +83,7 @@
     "di chúc": [
         "di chúc"
     ],
+    "vệ tinh": ["vệ tinh"],
     "trẻ em mẫu giáo": [
         "trẻ em mẫu giáo"
     ],
@@ -133,13 +137,15 @@
     "hợp tác xã": [
         "hợp tác xã"
     ],
+    "chương trình nước ngoài": ["chương trình nước ngoài"],
+    
     "có yếu tố nước ngoài": [
         "có yếu tố nước ngoài",
         "người nước ngoài",
         "nước ngoài"
     ],
     "cho người đã có hồ sơ, giấy tờ cá nhân": [
-        "cho người đã có hồ sơ, giấy tờ cá nhân"
+        "cho người đã có hồ sơ, giấy tờ cá nhân", "người đã có hồ sơ, giấy tờ cá nhân"
     ],
     "lần đầu": [
         "lần đầu"
