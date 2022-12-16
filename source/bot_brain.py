@@ -4,15 +4,13 @@ from itertools import chain
 from underthesea import word_tokenize
 import re
 
-BOT_MEMORY = {'keywords': [], 'action': None}
+BOT_MEMORY = {'keywords': [], 'action': []}
 
 def preprocessing(text):
     text = text.lower().replace('thủ tục','')
     text = re.sub(' +', ' ',text)
     text = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_\.\,]',' ',text)
     return text
-
-# print(preprocessing("thủ tục đăng ký kết hôn 22121 !@#            âa"))
 
 def remove_dup(result_list):
     tmp_list = list(dict.fromkeys(result_list))
@@ -23,28 +21,47 @@ def remove_dup(result_list):
 def bot_understand(user_question: str):
     global BOT_MEMORY
     keyword_list = []
+    action = []
     # load keyword dictionary
-    with open('../json_data/keyword.json', 'r', encoding='utf-8') as f:
-        keyword_dict = json.load(f)
+    with open('../json_data/keyword.json', 'r', encoding='utf-8') as f1:
+        keyword_dict = json.load(f1)
+        
+    with open('../json_data/action.json', 'r', encoding='utf-8') as f2:
+        action_dict = json.load(f2)
+        
     for key in keyword_dict.keys():
         for val in keyword_dict[key]:
             if val in user_question:
                 keyword_list.append(key)
                 user_question = user_question.replace(val, '')
+
+    for key in action_dict.keys():
+        for val in action_dict[key]:
+            if val in user_question:
+                action.append(key)
+                user_question = user_question.replace(val, '')
+    
     BOT_MEMORY.update({'keywords': keyword_list})
+    BOT_MEMORY.update({'action': action})
+    
     return BOT_MEMORY
 
-# print(bot_understand('Tối muốn đăng ký kết hôn với người nước ngoài'))
+# print(bot_understand('Tối muốn đăng ký kết hôn với người nước ngoài thì cần phải chuẩn bị giấy tờ gì lệ phí'))
 
 
 def search_token_in_database(user_token):
     df = pd.read_csv('../data/new_procedure.csv', engine='python')
-    procedures = df[df.procedure_name.str.contains(user_token, na=False)]
-    # flatten 2d list
-    procedure_list = list(chain.from_iterable(procedures.values.tolist()))
+    # print(df.info())
+    procedures = df[df.procedure_name.str.contains(user_token, na=False)].procedure_name
+    procedure_list = procedures.tolist()
+    # print(procedures.tolist())
+    # flatten 2d listresponse
+    # procedure_list = list(chain.from_iterable(procedures.tolist()))
+    # print(procedure_list)
     procedure_list = sorted(procedure_list, key=len)
     return procedure_list
 
+# print(search_token_in_database('kết hôn'))
 
 def search_list_token_in_database(list_user_token: list):
     tmp_list = []
@@ -77,6 +94,8 @@ def bot_searching(user_question: str):
     BOT_MEMORY = bot_understand(user_question)
     result = []
     keywords = BOT_MEMORY['keywords']
+    action = BOT_MEMORY['action']
+    
     if keywords:
         keywords = remove_dup(keywords)
 
@@ -97,7 +116,11 @@ def bot_searching(user_question: str):
         result = remove_dup(result)
         # Lấy K=5
         if result:
-            return result[:5]
+            tmp = result[:5]
+            response_json = []
+            for item in tmp:
+                response_json.append({'procedure': item, 'action': action})
+            return response_json
         else:
             return "Tôi chưa được học thủ tục này :("
     else:
@@ -110,7 +133,21 @@ def bot_searching(user_question: str):
         df1['Count'] = df1['procedure'].index
         result = list(df1[df1['procedure'] >= df1.procedure.max()-3]['Count'])
         if result:
-            return result[:5]
+            tmp = result[:5]
+            response_json = []
+            for item in tmp:
+                response_json.append({'procedure': item, 'action': action})
+            return response_json
         else:
             return "Tôi chưa được học thủ tục này :("
-# print(bot_searching('tôi muốn đăng ký kết hôn với người nước ngoài'))
+print(bot_searching('tôi muốn đăng ký kết hôn với người nước ngoài thì có mất phí không'))
+
+def bot_answer(procedure_name, action):
+    df = pd.read_csv('../data/new_procedure.csv', engine='python')
+    tmp_df = df[df.procedure_name == procedure_name]
+    print(tmp_df)
+    response = tmp_df['{}'.format(action)]
+    return response.values
+
+print(bot_answer('thủ tục đăng ký kết hôn', 'Lephi'))
+    

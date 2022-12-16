@@ -1,4 +1,4 @@
 pandas
 underthesea
-fastapi[full]
+fastapi
 uvicorn
