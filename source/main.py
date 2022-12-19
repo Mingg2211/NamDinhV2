@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from bot_brain import bot_searching
+from bot_brain import bot_searching, mingg
 from pydantic import BaseModel
 import uvicorn
 
@@ -23,10 +23,11 @@ class Item(BaseModel):
 @app.post("/bot_searching")
 def ranking_utter(item: Item):
     if item!='' and item:
-        result = bot_searching(item.value)
+        
+        result = mingg(item.value)
     else:
         result = "Nhập lại nhé"
     return {"ranking_answer": result}
 
 if __name__ == "__main__":
-    uvicorn.run('main:app', host='127.0.0.1', port=8000)
+    uvicorn.run('main:app', host='127.0.0.1', port=8000, reload=True)

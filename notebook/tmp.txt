@@ -12,3 +12,4 @@ K = 5  -> recall@5\
 VP = V1 + V2 + V3
 
 # handle index error when value is not in list
+
