@@ -140,17 +140,18 @@ def bot_searching(user_question: str):
             return response_json
         else:
             return "Tôi chưa được học thủ tục này :("
-# print(bot_searching('tôi muốn đăng ký kết hôn với người nước ngoài thì có mất phí không'))
+# print(bot_searching('Tối muốn đăng ký kết hôn'))
 
 def bot_answer(procedure_name, action):
     df = pd.read_csv('../data/new_procedure.csv', engine='python')
+    df = df.fillna('')
     index = df.index[df['procedure_name'] == procedure_name].tolist()
     if action:
         answer = df.at[index[0], action[0]]
     else:
         answer = df.iloc[index[0]]
     return answer
-# print(bot_answer('thủ tục đăng ký kết hôn', 'Lephi'))
+# print(bot_answer('thủ tục đăng ký kết hôn có yếu tố nước ngoài', []))
 
 def mingg(user_question:str):
     user_question = user_question.strip()
@@ -160,5 +161,5 @@ def mingg(user_question:str):
     final_answer = bot_answer(best_matching['procedure'], best_matching['action'])
     return final_answer
 
-print(mingg('tôi muốn đăng ký kết hôn với người nước ngoài có mất phí không'))
+print(mingg('tôi muốn cưới chồng người nước ngoài'))
     
